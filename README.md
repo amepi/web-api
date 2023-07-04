@@ -1,1 +1,3 @@
-# web-api
+```
+deno run --allow-net hello.ts
+```

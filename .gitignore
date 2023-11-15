@@ -1,0 +1,17 @@
+# Created by https://www.toptal.com/developers/gitignore/api/deno
+# Edit at https://www.toptal.com/developers/gitignore?templates=deno
+
+# vscode
+!.vscode/settings.json
+
+# Dependency directories
+/node_modules
+
+# environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# End of https://www.toptal.com/developers/gitignore/api/deno

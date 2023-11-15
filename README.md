@@ -51,7 +51,7 @@ deno fmt
 [Use formatting in Visual Studio Code](https://docs.deno.com/runtime/manual/references/vscode_deno/#using-formatting)
 by triggering the "Format Document" command (_Shift + Alt + F_ on windows).
 
-```json
+```jsonc
 // .vscode/settings.json
 {
   "editor.defaultFormatter": "denoland.vscode-deno"

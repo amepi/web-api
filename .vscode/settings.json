@@ -1,7 +1,9 @@
 {
-  "deno.enablePaths": [
-    "./"
-  ],
   "deno.enable": true,
-  "editor.inlayHints.enabled": "off"
+  "deno.lint": true,
+  "deno.unstable": true,
+  "editor.defaultFormatter": "denoland.vscode-deno"
+  // "[typescript]": {
+  //   "editor.defaultFormatter": "denoland.vscode-deno"
+  // },
 }

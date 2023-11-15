@@ -1,0 +1,7 @@
+// import { assertEquals } from "https://deno.land/std@0.205.0/assert/mod.ts";
+// import { assertEquals } from "assert";
+// import { add } from "../main.ts";
+
+// Deno.test(function addTest() {
+//   assertEquals(add(2, 3), 5);
+// });

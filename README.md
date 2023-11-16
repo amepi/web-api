@@ -2,11 +2,12 @@
 
 ## Prerequisite
 
-- [Deno](https://docs.deno.com/runtime/manual/getting_started/installation)
+- [Deno](https://deno.com/)
   (v1.38.1 minimum)
 - [Visual Studio Code](https://code.visualstudio.com/) (recommended)
   - [Deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
-- [Postman](https://www.postman.com) (recommended)
+- [Postman](#postman) (optional)
+- [Bitwarden Secrets Manager](#bitwarden-secrets-manager) (optional)
 
 ## Getting started
 
@@ -27,13 +28,15 @@ deno task dev
 
 ## [Tools](https://docs.deno.com/runtime/manual/tools/)
 
+### [Deno Built-In Tooling](https://docs.deno.com/runtime/manual/tools/)
+
 Deno provides some built-in tooling that is useful when working with JavaScript
 and TypeScript:
 
-### [Task Runner](https://docs.deno.com/runtime/manual/tools/task_runner)
+#### [Task Runner](https://docs.deno.com/runtime/manual/tools/task_runner)
 
-See the
-[list of tasks in the deno.json](https://docs.deno.com/runtime/manual/getting_started/configuration_file#tasks)
+Configure
+[tasks in the deno.json](https://docs.deno.com/runtime/manual/getting_started/configuration_file#tasks)
 file.
 
 ```bash
@@ -41,7 +44,7 @@ file.
 deno task
 ```
 
-### [Code Formatter](https://docs.deno.com/runtime/manual/tools/formatter)
+#### [Code Formatter](https://docs.deno.com/runtime/manual/tools/formatter)
 
 ```bash
 # format all supported files in the current directory and subdirectories
@@ -54,11 +57,11 @@ by triggering the "Format Document" command (_Shift + Alt + F_ on windows).
 ```jsonc
 // .vscode/settings.json
 {
-  "editor.defaultFormatter": "denoland.vscode-deno"
+  "editor.defaultFormatter": "denoland.vscode-deno" // deno vscode extension
 }
 ```
 
-### [Testing](https://docs.deno.com/runtime/manual/basics/testing/)
+#### [Testing](https://docs.deno.com/runtime/manual/basics/testing/)
 
 ```bash
 # run all tests in the current directory (recursively) that match the glob {*_,*.,}test.{ts, tsx, mts, js, mjs, jsx}
@@ -71,7 +74,7 @@ deno test utils/
 deno test my_test.ts
 ```
 
-### [Benchmarking](https://docs.deno.com/runtime/manual/tools/benchmarker)
+#### [Benchmarking](https://docs.deno.com/runtime/manual/tools/benchmarker)
 
 ```bash
 # run all benchmarks in the current directory (recursively) that match the glob {*_,*.,}bench.{ts, tsx, mts, js, mjs, jsx}
@@ -83,6 +86,10 @@ deno bench utils/
 # Run just my_bench.ts
 deno bench my_bench.ts
 ```
+
+### [Postman](https://www.postman.com)
+
+### [Bitwarden Secrets Manager](https://bitwarden.com/products/secrets-manager/)
 
 ## [Managing Dependencies](https://docs.deno.com/runtime/tutorials/manage_dependencies)
 
@@ -119,13 +126,23 @@ import React from "https://esm.sh/react@canary"; // 18.3.0-canary-7cd98ef2b-2023
 import { __await, __rest } from "https://esm.sh/tslib"; // 7.3KB
 import { __await, __rest } from "https://esm.sh/tslib?exports=__await,__rest"; // 489B
 
-// esm.sh has many more features (e.g. Importing WASM Modules, Pinning Build Version...)
+// esm.sh has more features (e.g. Bundle Mode, ESBuild Options, Importing WASM Modules...)
+```
+
+#### [Pinning Build](https://esm.sh/#pinning-build-version)
+
+To ensure stable and consistent behavior, you may want to pin the build version of a module you're using from esm.sh.
+
+```js
+import React from "https://esm.sh/react-dom?pin=v134";
+// or use version prefix
+import React from "https://esm.sh/v134/react-dom";
 ```
 
 #### [Using CLI Script](https://esm.sh/#cli)
 
-esm.sh provides a CLI script for managing imports with import maps in Deno. This
-CLI script automatically resolves dependencies and uses a pinned build version
+esm.sh provides a CLI script for managing imports with [import maps](#import-maps) in Deno. This
+CLI script automatically resolves dependencies and uses a [pinned build](#pinning-build) version
 for stability.
 
 ```bash
@@ -169,7 +186,8 @@ in the .vscode/settings.json file.
 
 ### [Deno](https://docs.deno.com/runtime/manual/getting_started/configuration_file)
 
-Deno supports a configuration file that allows you to customize the built-in TypeScript compiler, formatter, and linter.
+[deno.json](https://docs.deno.com/runtime/manual/#configure-your-project-with-denojson) file allows you to customize the [built-in TypeScript compiler](https://docs.deno.com/runtime/manual/advanced/typescript/overview#how-does-it-work),
+[formatter](#code-formatter), and [linter](https://docs.deno.com/runtime/manual/tools/linter).
 
 ## Code walkthrough
 
@@ -179,6 +197,9 @@ Express.
 ```js
 console.log("hello world");
 ```
+
 ### Project Structure
 
 [wip](https://nextjs.org/docs/getting-started/project-structure)
+
+## How To

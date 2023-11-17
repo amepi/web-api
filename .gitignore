@@ -2,7 +2,9 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=deno
 
 # vscode
+.vscode/*
 !.vscode/settings.json
+!.vscode/extensions.json
 
 # Dependency directories
 /node_modules

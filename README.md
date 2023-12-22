@@ -2,8 +2,7 @@
 
 ## Prerequisite
 
-- [Deno](https://deno.com/)
-  (v1.38.1 minimum)
+- [Deno](https://deno.com/) (v1.38.3)
 - [Visual Studio Code](https://code.visualstudio.com/) (recommended)
   - [Deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
 - [Postman](#postman) (optional)
@@ -19,14 +18,14 @@ Configure
 mv .env.example .env
 ```
 
-Finally run the application:
+Then execute the **dev** task:
 
 ```bash
 # run the program
 deno task dev
 ```
 
-## [Tools](https://docs.deno.com/runtime/manual/tools/)
+## Tools
 
 ### [Deno Built-In Tooling](https://docs.deno.com/runtime/manual/tools/)
 
@@ -74,6 +73,8 @@ deno test utils/
 deno test my_test.ts
 ```
 
+##### [Test Coverage](https://docs.deno.com/runtime/manual/basics/testing/coverage)
+
 #### [Benchmarking](https://docs.deno.com/runtime/manual/tools/benchmarker)
 
 ```bash
@@ -113,10 +114,11 @@ import lodash from "lodash";
 ### [npm via CDNs (esm.sh)](https://docs.deno.com/runtime/manual/node/cdns#esmsh)
 
 [esm.sh](https://esm.sh/) is a modern CDN that allows you to import es6 modules
-from a URL.
+from a URL:
 
 ```js
 import React from "https://esm.sh/react@18.2.0";
+
 // You may also use a semver or a dist-tag instead of a fixed version number
 import React from "https://esm.sh/react"; // 18.2.0 (latest)
 import React from "https://esm.sh/react@^17"; // 17.0.2
@@ -125,13 +127,12 @@ import React from "https://esm.sh/react@canary"; // 18.3.0-canary-7cd98ef2b-2023
 // Tree Shaking
 import { __await, __rest } from "https://esm.sh/tslib"; // 7.3KB
 import { __await, __rest } from "https://esm.sh/tslib?exports=__await,__rest"; // 489B
-
-// esm.sh has more features (e.g. Bundle Mode, ESBuild Options, Importing WASM Modules...)
 ```
 
 #### [Pinning Build](https://esm.sh/#pinning-build-version)
 
-To ensure stable and consistent behavior, you may want to pin the build version of a module you're using from esm.sh.
+To ensure stable and consistent behavior, you may want to pin the build version
+of a module you're using from esm.sh.
 
 ```js
 import React from "https://esm.sh/react-dom?pin=v134";
@@ -141,9 +142,9 @@ import React from "https://esm.sh/v134/react-dom";
 
 #### [Using CLI Script](https://esm.sh/#cli)
 
-esm.sh provides a CLI script for managing imports with [import maps](#import-maps) in Deno. This
-CLI script automatically resolves dependencies and uses a [pinned build](#pinning-build) version
-for stability.
+esm.sh provides a CLI script for managing imports with
+[import maps](#import-maps) in Deno. This CLI script automatically resolves
+dependencies and uses a [pinned build](#pinning-build) version for stability.
 
 ```bash
 # Adding packages
@@ -180,14 +181,33 @@ import express from "npm:express@^4.17";
 
 ### Visual Studio Code
 
+#### [Workspace Settings]()
+
 Configure
 [Visual Studio Code workspace settings](https://code.visualstudio.com/docs/editor/workspaces#_workspace-settings)
 in the .vscode/settings.json file.
 
+#### [Debugging in Visual Studio Code](https://docs.deno.com/runtime/manual/references/vscode_deno#using-the-debugger)
+
+The Deno extension provides integration with the built-in VSCode debugger.
+
+#### [Workspace Recommended Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions)
+
+You can add a list of extensions identifiers:
+
+```json
+{
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+}
+```
+
 ### [Deno](https://docs.deno.com/runtime/manual/getting_started/configuration_file)
 
-[deno.json](https://docs.deno.com/runtime/manual/#configure-your-project-with-denojson) file allows you to customize the [built-in TypeScript compiler](https://docs.deno.com/runtime/manual/advanced/typescript/overview#how-does-it-work),
-[formatter](#code-formatter), and [linter](https://docs.deno.com/runtime/manual/tools/linter).
+[deno.json](https://docs.deno.com/runtime/manual/#configure-your-project-with-denojson)
+file allows you to customize the
+[built-in TypeScript compiler](https://docs.deno.com/runtime/manual/advanced/typescript/overview#how-does-it-work),
+[formatter](#code-formatter), and
+[linter](https://docs.deno.com/runtime/manual/tools/linter).
 
 ## Code walkthrough
 
@@ -202,4 +222,8 @@ console.log("hello world");
 
 [wip](https://nextjs.org/docs/getting-started/project-structure)
 
-## How To
+### Environments
+
+## To Do
+
+### Before git push

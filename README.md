@@ -2,7 +2,7 @@
 
 ## Prerequisite
 
-- [Deno](https://deno.com/) (v1.38.3)
+- [Deno](https://deno.com/) (v1.39.2)
 - [Visual Studio Code](https://code.visualstudio.com/) (recommended)
   - [Deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno)
 - [Postman](#postman) (optional)

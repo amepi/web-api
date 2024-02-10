@@ -1,9 +1,11 @@
 {
   "tasks": {
-    "dev": "deno run -A --unstable-hmr main.ts"
+    "dev": "deno run -A --unstable-hmr main.ts",
+    "test": "deno test",
+    "bench": "deno bench"
   },
   "imports": {
-    "hono": "https://deno.land/x/hono/mod.ts",
+    "hono/": "https://deno.land/x/hono@v4.0.0/",
     "assert": "https://deno.land/std@0.206.0/assert/mod.ts"
   }
 }
